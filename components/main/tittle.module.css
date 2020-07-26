@@ -1,0 +1,9 @@
+p.tittle{
+    color: blue;
+    font-size: 5rem;
+    text-align: center;
+}
+
+div.tittleBox{
+    background-color: black;
+}

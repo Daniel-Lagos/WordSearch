@@ -1,13 +1,15 @@
 import List from "../components/list/list";
+import TittleWordSearch from "../components/main/main-tittle";
+import WordSearch from "../components/word-search-table/word-search";
 
 const Index = () => {
     return (<>
-           <h1>Hola</h1>
-            <List cities={['Duitama','Sogamoso','Belen','Tibasosa','Cerinza']} name={'Daniel Lagos'} state={'boy'}/>
-            <List cities={['Bogota','Chia','Barbosa']} name={'Kika Lazo'} state={'cun'}/>
-            <List cities={['Medellin','Bello','Itagui','Envigado']} name={'Keku la(El hermano de kika)'} state={'anti'}/>
-            <h1>Hola</h1>
-       </>
+            <div>
+                <TittleWordSearch/>
+                <WordSearch/>
+            </div>
+
+        </>
     );
 };
 
