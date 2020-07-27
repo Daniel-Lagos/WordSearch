@@ -7,19 +7,22 @@ import FindWords from "../components/find-words/find-words";
 
 const Index = () => {
     return (<>
-            <TittleWordSearch/>
-            <div className={styles.divleft}>
-                <Chronometer/>
-                <WordSearch/>
+            <div className={styles.divBackground}>
+                <TittleWordSearch/>
+                <div className={styles.divleft}>
+                    <Chronometer/>
+                    <WordSearch/>
+                </div>
+                <div className={styles.divrigth}>
+                    <FindWords word={'CSS'}/>
+                    <FindWords word={'JAVASCRIPT'}/>
+                    <FindWords word={'NODEJS'}/>
+                    <FindWords word={'HTML'}/>
+                    <FindWords word={'REACT'}/>
+                    <FindWords word={'REACT'}/>
+                    <FindWords word={'REACT'}/>
+                </div>
             </div>
-            <div className={styles.divrigth}>
-                <FindWords word={'CSS'}/>
-                <FindWords word={'JAVASCRIPT'}/>
-                <FindWords word={'NODEJS'}/>
-                <FindWords word={'HTML'}/>
-                <FindWords word={'REACT'}/>
-            </div>
-
         </>
     );
 };
