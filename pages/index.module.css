@@ -2,10 +2,12 @@ div.divleft{
     float: left;
 }
 div.divrigth{
-    float: right;
-    border: 1px solid ;
-    height: 525px;
+    text-align: center;
+    background-color: gainsboro;
+    display: inline-block;
     width: 300px;
+    float: right;
+    height: 520px;
     margin-top: 100px;
     margin-right: 40px;
 }

@@ -1,9 +1,6 @@
 div.wordBox{
-    text-align: center;
-    background-color: gainsboro;
-    display: inline-block;
-    width: 300px;
+    border: 1px solid blue;
 }
 p.wordBox{
-    font-size: 1.5rem;
+    font-size: 1.0rem;
 }

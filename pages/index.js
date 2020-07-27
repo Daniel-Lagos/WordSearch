@@ -7,6 +7,9 @@ import FindWords from "../components/find-words/find-words";
 
 const Index = () => {
     return (<>
+            <head>
+                <title>Word Search</title>
+            </head>
             <div className={styles.divBackground}>
                 <TittleWordSearch/>
                 <div className={styles.divleft}>
@@ -19,8 +22,12 @@ const Index = () => {
                     <FindWords word={'NODEJS'}/>
                     <FindWords word={'HTML'}/>
                     <FindWords word={'REACT'}/>
-                    <FindWords word={'REACT'}/>
-                    <FindWords word={'REACT'}/>
+                    <FindWords word={'JAVA'}/>
+                    <FindWords word={'SOFTWARE'}/>
+                    <FindWords word={'HARDWARE'}/>
+                    <FindWords word={'PHP'}/>
+                    <FindWords word={'WEB'}/>
+
                 </div>
             </div>
         </>
