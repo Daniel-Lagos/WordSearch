@@ -1,5 +1,16 @@
 table.tableWord {
-    border-color: green;
+    border: medium double blue;
     table-border-color-light: aqua;
-    background-color: red;
+    background-color: aquamarine;
+    width: 650px;
+    height: 450px;
+}
+
+div.tableBox{
+    margin-left: 40px;
+    padding-top: 40px;
+    padding-left: 50px;
+    border: 1px solid black;
+    width: 700px;
+    height: 500px;
 }
