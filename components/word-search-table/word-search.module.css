@@ -2,7 +2,7 @@ table.tableWord {
     border: medium double blue;
     table-border-color-light: aqua;
     background-color: aquamarine;
-    width: 650px;
+    width: 750px;
     height: 450px;
 }
 
@@ -11,6 +11,6 @@ div.tableBox{
     padding-top: 40px;
     padding-left: 50px;
     border: 1px solid black;
-    width: 700px;
+    width: 800px;
     height: 500px;
 }
