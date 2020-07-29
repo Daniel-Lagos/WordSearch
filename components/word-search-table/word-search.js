@@ -5,7 +5,7 @@ const WordSearch = () => {
     return (<>
         <div className={styles.tableBox}>
             <table className={styles.tableWord}>
-
+                
             </table>
         </div>
     </>);

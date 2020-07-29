@@ -1,4 +1,7 @@
 p.chronometer {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    margin: 1rem;
 }
+

@@ -1,9 +1,12 @@
-p.tittle{
+h1.tittle {
     color: blue;
     font-size: 5rem;
     text-align: center;
+    margin: 1rem 2rem;
+    border: 1px dashed blue;
 }
 
-div.tittleBox{
+.time button {
+    /*todos los elementos de tipo button que esten en time van a tener esas propiedades */
 
 }

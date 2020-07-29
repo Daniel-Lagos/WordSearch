@@ -4,30 +4,32 @@ import TittleWordSearch from "../components/main/main-tittle";
 import WordSearch from "../components/word-search-table/word-search";
 import Chronometer from "../components/chronometer/chronometer";
 import FindWords from "../components/find-words/find-words";
+import GameButton from "../components/buttons/game-button";
+import Head from "next/head";
+import MainTitle from "../components/main/main-tittle";
+import Score from "../components/score/score";
 
 const Index = () => {
     return (<>
-            <head>
+            <Head>
                 <title>Word Search</title>
-            </head>
-            <div className={styles.divBackground}>
-                <TittleWordSearch/>
-                <div className={styles.divleft}>
+                <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"/>
+            </Head>
+            <MainTitle/>
+            <div className={styles.maincontent}>
+                <div className={styles.gameinformation}>
+                    <GameButton text={'New Game'}/>
                     <Chronometer/>
-                    <WordSearch/>
+                    <Score/>
                 </div>
-                <div className={styles.divrigth}>
-                    <FindWords word={'CSS'}/>
-                    <FindWords word={'JAVASCRIPT'}/>
-                    <FindWords word={'NODEJS'}/>
-                    <FindWords word={'HTML'}/>
-                    <FindWords word={'REACT'}/>
-                    <FindWords word={'JAVA'}/>
-                    <FindWords word={'SOFTWARE'}/>
-                    <FindWords word={'HARDWARE'}/>
-                    <FindWords word={'PHP'}/>
-                    <FindWords word={'WEB'}/>
-
+                <div className={styles.gamewords}>
+                    <p>Hola Mundo</p>
+                </div>
+                <div className={styles.gamewordsearch}>
+                    <p>Hola Mundo</p>
+                </div>
+                <div className={styles.gamewordslist}>
+                    <p>Hola Mundo</p>
                 </div>
             </div>
         </>

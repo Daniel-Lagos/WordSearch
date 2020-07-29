@@ -1,0 +1,8 @@
+button.buttonNewGame{
+    border: none;
+    background-color: #2d98da;
+    border-radius: 4px;
+    padding: 0 1rem;
+    color: antiquewhite;
+    height: 2rem;
+}

@@ -1,16 +1,28 @@
-div.divleft{
-    float: left;
+.maincontent {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    display: grid;
 }
-div.divrigth{
-    text-align: center;
-    background-color: gainsboro;
-    display: inline-block;
-    width: 300px;
-    float: right;
-    height: 520px;
-    margin-top: 100px;
-    margin-right: 40px;
-}
-div.divBackground{
 
+.gameinformation{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+.gamewords{
+    display: flex;
+    align-items: center;
+   justify-content: center;
+    flex-direction: row;
+    background: antiquewhite;
+}
+.gamewordsearch{
+    background: blue;
+    text-align: center;
+}
+.gamewordslist{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
