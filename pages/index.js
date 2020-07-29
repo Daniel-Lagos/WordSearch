@@ -23,7 +23,7 @@ const Index = () => {
                     <Score/>
                 </div>
                 <div className={styles.gamewords}>
-                    <p>Hola Mundo</p>
+                    <FindWords/>
                 </div>
                 <div className={styles.gamewordsearch}>
                     <p>Hola Mundo</p>

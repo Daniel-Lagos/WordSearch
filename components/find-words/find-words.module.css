@@ -1,6 +1,3 @@
-div.wordBox{
-    border: 1px solid blue;
-}
-p.wordBox{
-    font-size: 1.0rem;
+p.wordBox {
+    font-size: 1rem;
 }

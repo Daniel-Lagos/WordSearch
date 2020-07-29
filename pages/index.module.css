@@ -15,10 +15,8 @@
     align-items: center;
    justify-content: center;
     flex-direction: row;
-    background: antiquewhite;
 }
 .gamewordsearch{
-    background: blue;
     text-align: center;
 }
 .gamewordslist{
