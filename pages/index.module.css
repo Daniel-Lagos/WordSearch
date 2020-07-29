@@ -1,26 +1,37 @@
 .maincontent {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr ;
     grid-gap: 1rem;
     display: grid;
 }
 
-.gameinformation{
+.gameinformation {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: row;
 }
-.gamewords{
+
+.gamewords {
     display: flex;
     align-items: center;
-   justify-content: center;
+    justify-content: center;
     flex-direction: row;
 }
-.gamewordsearch{
+
+.gamewordsearch {
     text-align: center;
 }
-.gamewordslist{
+
+.gamewordslist {
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+@media (min-width: 600px) {
+    .maincontent {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+        display: grid;
+    }
 }
