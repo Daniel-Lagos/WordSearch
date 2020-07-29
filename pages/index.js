@@ -11,29 +11,29 @@ import Score from "../components/score/score";
 
 const Index = () => {
     return (<>
-            <Head>
-                <title>Word Search</title>
-                <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"/>
-            </Head>
-            <MainTitle/>
-            <div className={styles.maincontent}>
-                <div className={styles.gameinformation}>
-                    <GameButton text={'New Game'}/>
-                    <Chronometer/>
-                    <Score/>
-                </div>
-                <div className={styles.gamewords}>
-                    <FindWords/>
-                </div>
-                <div className={styles.gamewordsearch}>
-                    <p>Hola Mundo</p>
-                </div>
-                <div className={styles.gamewordslist}>
-                    <p>Hola Mundo</p>
-                </div>
+        <Head>
+            <title>Word Search</title>
+            <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"/>
+        </Head>
+        <MainTitle/>
+        <div className={styles.maincontent}>
+            <div className={styles.gameinformation}>
+                <GameButton text={'New Game'}/>
+                <Chronometer/>
+                <Score/>
             </div>
-        </>
-    );
+            <div className={styles.gamewords}>
+                <p>Words</p>
+            </div>
+            <div className={styles.gamewordsearch}>
+                <WordSearch/>
+            </div>
+            <div className={styles.gamewordslist}>
+                <FindWords/>
+            </div>
+        </div>
+    </>
+);
 };
 
 export default Index;

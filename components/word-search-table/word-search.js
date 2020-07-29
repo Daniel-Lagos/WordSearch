@@ -1,13 +1,17 @@
 import styles from './word-search.module.css'
 
-const WordSearch = () => {
+const words=[]
 
+const generateWords=()=>{
+
+}
+const WordSearch = () => {
     return (<>
-        <div className={styles.tableBox}>
             <table className={styles.tableWord}>
-                
+                <tbody>
+                    generateWords
+                </tbody>
             </table>
-        </div>
     </>);
 
 }
