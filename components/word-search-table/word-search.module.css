@@ -3,8 +3,11 @@
     border: 1px solid #2d98da;
     align-self: center;
     border-collapse: collapse;
-
+    font-size: 1rem;
 }
+
 .tableWord tr td {
+    width: 2rem;
+    height: 2rem;
     border: 1px solid;
 }
