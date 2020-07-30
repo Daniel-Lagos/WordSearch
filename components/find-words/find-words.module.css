@@ -1,7 +1,7 @@
 .wordBox {
     list-style: none;
     padding-inline: 0;
-    padding: 0 3rem 0 2rem;
+    padding: 0;
 }
 
 .wordBox li {
@@ -11,6 +11,7 @@
     text-align: center;
     background: #2d98da;
     color: antiquewhite;
+    cursor: pointer;
 }
 
 .wordBox li:last-of-type {

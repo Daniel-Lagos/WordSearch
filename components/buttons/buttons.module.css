@@ -5,4 +5,5 @@ button.buttonNewGame{
     padding: 0 1rem;
     color: antiquewhite;
     height: 2rem;
+    cursor: pointer;
 }

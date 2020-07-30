@@ -9,7 +9,8 @@
     align-items: center;
     justify-content: space-evenly;
     flex-direction: row;
-
+    grid-column: 1;
+    grid-row: 1;
 }
 
 .gamewords {
@@ -17,6 +18,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    grid-column: 1;
+    grid-row: 3;
 }
 
 .gamewordsearch {
@@ -24,11 +27,15 @@
     justify-content: center;
     text-align: center;
     padding: 0 2rem;
+    grid-column: 1;
+    grid-row: 2;
 }
 
 .gamewordslist {
     display: flex;
     flex-direction: column;
+    grid-column: 1;
+    grid-row: 4;
 }
 
 @media (min-width: 600px) {
@@ -36,5 +43,28 @@
         grid-template-columns: 65% 35%;
         grid-gap: 1rem;
         display: grid;
+        margin: 0 3rem;
+    }
+    .gameinformation {
+        grid-column: 1;
+        grid-row: 1;
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .gamewords {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .gamewordsearch {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .gamewordslist {
+        grid-column: 2;
+        grid-row: 2;
+
     }
 }

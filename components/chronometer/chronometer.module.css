@@ -3,5 +3,6 @@ p.chronometer {
     text-align: center;
     font-family: 'Orbitron', sans-serif;
     margin: 1rem;
+    user-select: none;
 }
 
