@@ -12,3 +12,6 @@
     border: 1px solid;
     user-select: none;
 }
+.tableWord tr td:hover{
+    background: #8854d0;
+}
