@@ -3,9 +3,11 @@ td.letter {
     height: 2rem;
     border: 1px solid;
     user-select: none;
+    cursor: pointer;
 }
 
-td.letter:hover {
+td.letter:hover,
+td.letter:focus {
     background: #8854d0;
 }
 
