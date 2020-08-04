@@ -6,12 +6,3 @@
     font-size: 1rem;
 }
 
-.tableWord tr td {
-    width: 2rem;
-    height: 2rem;
-    border: 1px solid;
-    user-select: none;
-}
-.tableWord tr td:hover{
-    background: #8854d0;
-}

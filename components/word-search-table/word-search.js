@@ -1,4 +1,5 @@
 import styles from './word-search.module.css'
+import Letter from "../word-search-letter/letter";
 
 const words = [
     ['a', 'b','a', 'b','a', 'b','a', 'b','a', 'b'],
@@ -21,9 +22,9 @@ const generateWords = () => {
                     return (
                         <tr key={index}>
                             {
-                                row.map((word, index) => {
+                                row.map((letter, index) => {
                                     return (
-                                        <td key={index}>{word}</td>
+                                       <Letter key={index} letter={letter}/>
                                     )
                                 })
                             }

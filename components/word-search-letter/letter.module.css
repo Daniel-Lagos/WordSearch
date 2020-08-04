@@ -1,0 +1,14 @@
+td.letter {
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid;
+    user-select: none;
+}
+
+td.letter:hover {
+    background: #8854d0;
+}
+
+td.letter.selected {
+    background: #eb3b5a;
+}
