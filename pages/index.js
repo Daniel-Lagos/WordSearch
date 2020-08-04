@@ -8,7 +8,7 @@ import MainTitle from "../components/main/main-tittle";
 import Score from "../components/score/score";
 import wordsearch from "../utils/word-search-logic";
 
-const Index = () => {
+const  Index= (props) => {
     return (<>
             <Head>
                 <title>Word Search</title>
@@ -25,7 +25,7 @@ const Index = () => {
                     <p>Words</p>
                 </div>
                 <div className={styles.gamewordsearch}>
-                    <WordSearch/>
+                    <WordSearch wordsString={props.puzzle}/>
                 </div>
                 <div className={styles.gamewordslist}>
                     <FindWords/>

@@ -1,24 +1,11 @@
 import styles from './word-search.module.css'
 import Letter from "../word-search-letter/letter";
 
-const words = [
-    ['a', 'b','a', 'b','a', 'b','a', 'b','a', 'b'],
-    ['a', 'b','a', 'b','a', 'b','a', 'b','a', 'b'],
-    ['a', 'b','a', 'b','a', 'b','a', 'b','a', 'b'],
-    ['a', 'b','a', 'b','a', 'b','a', 'b','a', 'b'],
-    ['a', 'b','a', 'b','a', 'b','a', 'b','a', 'b'],
-    ['a', 'b','a', 'b','a', 'b','a', 'b','a', 'b'],
-    ['a', 'b','a', 'b','a', 'b','a', 'b','a', 'b'],
-    ['a', 'b','a', 'b','a', 'b','a', 'b','a', 'b'],
-    ['a', 'b','a', 'b','a', 'b','a', 'b','a', 'b'],
-    ['a', 'b','a', 'b','a', 'b','a', 'b','a', 'b']
-]
-
-const generateWords = () => {
+const generateWords = (wordsString) => {
     return (
         <>
             {
-                words.map((row, index) => {
+                wordsString.map((row, index) => {
                     return (
                         <tr key={index}>
                             {
@@ -36,11 +23,11 @@ const generateWords = () => {
     )
 }
 
-const WordSearch = () => {
+const WordSearch = ({wordsString = []}) => {
     return (<>
         <table className={styles.tableWord}>
             <tbody>
-                {generateWords()}
+                {generateWords(wordsString)}
             </tbody>
         </table>
     </>);
