@@ -28,7 +28,7 @@ const  Index= (props) => {
                     <WordSearch wordsString={props.puzzle}/>
                 </div>
                 <div className={styles.gamewordslist}>
-                    <FindWords/>
+                    <FindWords wordsList={props.originalWords}/>
                 </div>
             </div>
         </>
@@ -60,16 +60,17 @@ export const getServerSideProps = async (context) => {
     const wordsJSON = await import('../utils/words.json');
     const words = wordsJSON.default || [];
     const randomWords = shuffle(words);
-    const selectedWords = randomWords.slice(0, 8);
+    const selectedWords = randomWords.slice(0, 4);
     const wordsSortedByLength = selectedWords.sort((a, b) => {
         return a.word.length > b.word.length ? -1 : 1;
     });
     const size = Math.ceil(wordsSortedByLength[0].word.length * 1.25);
     const wordsStrings = wordsSortedByLength.map((it) => {
-        return it.word
+        return it.word.toLowerCase()
     })
     const search = await wordsearch(wordsStrings, size, size);
     if (!search) return {props: {}};
+    console.log(wordsStrings)
     return {
         props: {
             puzzle: search.grid,

@@ -2,13 +2,13 @@ import styles from './find-words.module.css'
 
 const words = ['CSS', 'NodeJS', 'React', 'JavaScript', 'HTML'];
 
-const FindWords = () => {
+const FindWords = ({wordsList}) => {
     return (<>
         <ul className={styles.wordBox}>
             {
-                words.map((words, index) => {
+                wordsList.map((words, index) => {
                         return (
-                            <li className={styles.wordBox} key={index}>{words}</li>
+                            <li className={styles.wordBox} key={index}>{words.word}</li>
                         )
                     }
                 )
