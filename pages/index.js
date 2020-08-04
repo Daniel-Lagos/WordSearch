@@ -8,7 +8,7 @@ import MainTitle from "../components/main/main-tittle";
 import Score from "../components/score/score";
 import wordsearch from "../utils/word-search-logic";
 
-const  Index= (props) => {
+const Index = (props) => {
     return (<>
             <Head>
                 <title>Word Search</title>
@@ -64,19 +64,21 @@ export const getServerSideProps = async (context) => {
     const wordsSortedByLength = selectedWords.sort((a, b) => {
         return a.word.length > b.word.length ? -1 : 1;
     });
-    const size = Math.ceil(wordsSortedByLength[0].word.length * 1.25);
+    const size = Math.ceil(wordsSortedByLength[0].word.length * 1.5);
     const wordsStrings = wordsSortedByLength.map((it) => {
         return it.word.toLowerCase()
     })
     const search = await wordsearch(wordsStrings, size, size);
     if (!search) return {props: {}};
-    console.log(wordsStrings)
+    const actuallyPlacedWords = wordsSortedByLength.filter((it) => {
+        return Object.keys(search.placed).includes(it.word.toLowerCase())
+    });
     return {
         props: {
             puzzle: search.grid,
             solved: search.solved,
             placed: search.placed,
-            originalWords: wordsSortedByLength
+            originalWords: actuallyPlacedWords
         }
     };
 };
