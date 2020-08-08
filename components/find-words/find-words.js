@@ -1,5 +1,5 @@
-import styles from './find-words.module.css'
-
+import styles from './find-words.module.css';
+import {useContext} from 'react';
 const words = ['CSS', 'NodeJS', 'React', 'JavaScript', 'HTML'];
 
 const FindWords = ({wordsList}) => {

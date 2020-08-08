@@ -1,5 +1,6 @@
 import styles from './word-search.module.css'
 import Letter from "../word-search-letter/letter";
+import {useContext} from 'react';
 
 const generateWords = (wordsString) => {
     return (
@@ -11,7 +12,7 @@ const generateWords = (wordsString) => {
                             {
                                 row.map((letter, index) => {
                                     return (
-                                       <Letter key={index} letter={letter}/>
+                                        <Letter key={index} letter={letter}/>
                                     )
                                 })
                             }
@@ -27,7 +28,7 @@ const WordSearch = ({wordsString = []}) => {
     return (<>
         <table className={styles.tableWord}>
             <tbody>
-                {generateWords(wordsString)}
+            {generateWords(wordsString)}
             </tbody>
         </table>
     </>);

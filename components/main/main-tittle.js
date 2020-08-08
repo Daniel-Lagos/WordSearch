@@ -1,10 +1,8 @@
 import styles from './tittle.module.css'
 
-const MainTitle = () => {
+const MainTitle = ({title = ''}) => {
     return (
-        <h1 className={styles.tittle}>WordSearch</h1>
+        <h1 className={styles.tittle}>{title}</h1>
     );
 }
-
-
 export default MainTitle;
