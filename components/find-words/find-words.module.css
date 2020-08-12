@@ -18,3 +18,8 @@
 .wordBox li:last-of-type {
     border: 1px solid;
 }
+
+.wordBox li.solved{
+    text-decoration: underline;
+    background: #8854d0;
+}

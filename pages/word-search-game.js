@@ -7,6 +7,7 @@ import Head from "next/head";
 import MainTitle from "../components/main/main-tittle";
 import Score from "../components/score/score";
 import wordsearch from "../utils/word-search-logic";
+import WordSearchContext from "../components/word-search-context";
 
 const WordSearchGame = (props) => {
     return (<>
@@ -15,21 +16,16 @@ const WordSearchGame = (props) => {
                 <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"/>
             </Head>
             <MainTitle title={'Word Search'}/>
-            <div className={styles.maincontent}>
-                <div className={styles.gameinformation}>
+            <div className={styles.mainContent}>
+                <div className={styles.gameInformation}>
                     <GameButton text={'New Game'}/>
                     <Chronometer/>
                     <Score/>
                 </div>
-                <div className={styles.gamewords}>
+                <div className={styles.gameWords}>
                     <p>Words</p>
                 </div>
-                <div className={styles.gamewordsearch}>
-                    <WordSearch wordsString={props.puzzle} />
-                </div>
-                <div className={styles.gamewordslist}>
-                    <FindWords wordsList={props.originalWords}/>
-                </div>
+                <WordSearchContext {...props}/>
             </div>
         </>
     );
@@ -73,9 +69,9 @@ export const getServerSideProps = async (context) => {
     const actuallyPlacedWords = wordsSortedByLength.filter((it) => {
         return Object.keys(search.placed).includes(it.word.toLowerCase())
     });
-    console.log(search.placed)
-    console.log('==========================================================================')
-    console.log(search.solved)
+    //console.log(search.placed)
+    // console.log('==========================================================================')
+    // console.log(search.solved)
 
     return {
         props: {

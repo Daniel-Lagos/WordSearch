@@ -1,6 +1,5 @@
 import styles from './word-search.module.css'
 import Letter from "../word-search-letter/letter";
-import {useContext} from 'react';
 
 const generateWords = (wordsString) => {
     return (
@@ -10,9 +9,9 @@ const generateWords = (wordsString) => {
                     return (
                         <tr key={index}>
                             {
-                                row.map((letter, index) => {
+                                row.map((letter, indey) => {
                                     return (
-                                        <Letter key={index} letter={letter}/>
+                                        <Letter key={indey} letter={letter} x={index} y={indey}/>
                                     )
                                 })
                             }
