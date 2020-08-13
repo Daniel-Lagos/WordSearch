@@ -69,7 +69,7 @@ export const getServerSideProps = async (context) => {
     const actuallyPlacedWords = wordsSortedByLength.filter((it) => {
         return Object.keys(search.placed).includes(it.word.toLowerCase())
     });
-    //console.log(search.placed)
+    console.log(search.placed)
     // console.log('==========================================================================')
     // console.log(search.solved)
 
