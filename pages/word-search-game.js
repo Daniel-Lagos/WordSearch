@@ -1,13 +1,11 @@
 import styles from './word-search-game.module.css'
-import WordSearch from "../components/word-search-table/word-search";
-import Chronometer from "../components/chronometer/chronometer";
-import FindWords from "../components/find-words/find-words";
 import GameButton from "../components/buttons/game-button";
 import Head from "next/head";
 import MainTitle from "../components/main/main-tittle";
 import Score from "../components/score/score";
 import wordsearch from "../utils/word-search-logic";
 import WordSearchContext from "../components/word-search-context";
+import Link from "next/link";
 
 const WordSearchGame = (props) => {
     return (<>
@@ -19,7 +17,9 @@ const WordSearchGame = (props) => {
             <div className={styles.mainContent}>
                 <div className={styles.gameInformation}>
                     <GameButton text={'New Game'}/>
-                    <Chronometer/>
+                    <Link href={'/index'}>
+                        <a className={styles.goBack}>Volver</a>
+                    </Link>
                     <Score/>
                 </div>
                 <div className={styles.gameWords}>
@@ -69,7 +69,7 @@ export const getServerSideProps = async (context) => {
     const actuallyPlacedWords = wordsSortedByLength.filter((it) => {
         return Object.keys(search.placed).includes(it.word.toLowerCase())
     });
-    console.log(search.placed)
+    //console.log(search.placed)
     // console.log('==========================================================================')
     // console.log(search.solved)
 

@@ -13,19 +13,16 @@ const FindWords = ({wordsList, wordsPlaced}) => {
                     numberCorrectPositions += 1;
             })
         })
-        //buscar words en solved words y comparo los xy de value
-        //value compararlo con el resolve words
-        console.log(numberCorrectPositions,'Numero de posiciones correctas')
         return numberCorrectPositions === word.length;
     }
-
+    
     return (<>
         <ul className={styles.wordBox}>
             {
                 wordsList.map((word, index) => {
                         return (
                             <li className={resolveWords(word.word) ? styles.solved : ""} key={index} onClick={() => {
-                                console.log(word.meaning);
+                                alert(word.meaning);
                             }}>{word.word}</li>
                         )
                     }

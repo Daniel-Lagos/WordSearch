@@ -19,14 +19,14 @@ const Index = (props) => {
                     <p>Hola mundo</p>
                     <img className={styles.imageContent} src={'/images/wordSearch.png'} alt={''}/>
                     <Link href={'/word-search-game'}>
-                    <a className={styles.startGame}>Start</a>
+                        <a className={styles.startGame}>Start</a>
                     </Link>
                 </div>
                 <div className={styles.boxContent}>
                     <h3>Crossword</h3>
                     <p>Hola mundo</p>
                     <img className={styles.imageContent} src={'/images/crossword.png'} alt={''}/>
-                    <Link href={'/word-search-game'}>
+                    <Link href={'/crossword-game'}>
                         <a className={styles.startGame}>Start</a>
                     </Link>
                 </div>
