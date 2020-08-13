@@ -6,10 +6,11 @@ import styles from "../pages/word-search-game.module.css";
 
 const wordAction = (data, action) => {
     //valor del action es lo que yo le paso a la funcion
+    console.log(data)
     if (!action.selected)
         return [...(data || []), [action.x, action.y]];
     else
-        return data.filter((it) => (action.x !== it[0] && action.y !== it[1]));
+        return data.filter((it) => !(action.x === it[0] && action.y === it[1]));
 }
 
 const WordContext = createContext('wordSearch');
