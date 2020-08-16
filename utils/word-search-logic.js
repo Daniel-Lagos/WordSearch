@@ -6,7 +6,7 @@ const MAX_ATTEMPTS = 20;                       // maximum amount of times to pla
  *
  * generate a wordsearch puzzle
  */
-function wordsearch(words, width, height, opts) {
+function wordsearch(words, width, height, opts,game) {
     if (!words || !words.length) return false;
     width = +width || 20;
     height = +height || 20;
@@ -41,7 +41,7 @@ function wordsearch(words, width, height, opts) {
 
         // reverse the word if needed
         if (Math.random() < opts.backwards) {
-            word = word.split('').reverse().join('');
+          word = word.split('').reverse().join('');
         }
 
         // pick a random spot
