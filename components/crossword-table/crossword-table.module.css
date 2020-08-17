@@ -1,0 +1,8 @@
+.tableWord {
+    align-content: center;
+    border: 10px solid #2d98da;
+    align-self: center;
+    text-align: center;
+    border-collapse: collapse;
+    font-size: 1rem;
+}

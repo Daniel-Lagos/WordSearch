@@ -1,214 +1,214 @@
 [
   {
     "word": "adaptabilidad",
-    "meaning": "save time"
+    "meaning": "Propiedad que tiene un sistema de aprender y modificar un proceso, un estado o una caracteristica de acuerdo a las modificaciones que sufre el contexto. Un sistema adaptable poseé un fluido de intercambio con el medio en el que se desarrolla."
   },
   {
     "word": "ambiente",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Sucesos y condiciones que influyen sobre el comportamiento de un sistema."
   },
   {
     "word": "armonia",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Propiedad que mide el nivel de compatibilidad con su medio o contexto. Un sistema altamente armonico es aquel que sufre modificaciones en su estructura, proceso o características en la medida que el medio se lo exige y es estático cuando el medio también lo es."
   },
   {
     "word": "atributo",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Componentes de un sistema donde se determinan las estructuras y sus funciones. Estos de definen tal como se conoce u observa un sistema, dividiendose en dos partes, definidores y concomitantes: los definidores sin ellos una entidad no sería designada o definida; los atributos concomitantes cuya presencia no establece ninguna diferencia con respecto a su uso."
   },
   {
-    "word": "caja negra",
-    "meaning": "Cascading Styles Sheets"
+    "word": "cajanegra",
+    "meaning": "Forma de representación a los sistemas cuando no se sabe que elemetos o cosas lo pueden componer, pero se tiene unas determinadas entradas, estas claramente determinan una salida. Dependiendo de unos estímulos, las distintas variables cambiarián en varios sentidos."
   },
   {
     "word": "cibernetica",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Entendiendose como el campo interdisciplinario de los procesos de control y de comunicación, tendiendo a ser la retroalimentación de tanto maquinas como seres vivos. "
   },
   {
     "word": "circularidad",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Concepto cibernético que nos refiere a los procesos de autocausación. Cuando A causa B y B causa C, pero C causa A, luego A en lo esencial es autocusado."
   },
   {
     "word": "complejidad",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Nos puede indicar la cantidad de elementos de un sistema, sus interacciones y el número de estados posibles que se pueden llegar a producir. La complejidad sistématica está en directa proporció con su variedad y variabilidad, siempre desde una medida comparativa."
   },
   {
     "word": "conglomerado",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Suma de las partes, componentes y atributos en un conjunto es igual a todo, presentando una totalidad deprovista de sinergia, es decir de un conglomerado."
   },
   {
     "word": "contexto",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Objetos exteriores al sistema, pero llegan a influir de manera inmediate en éste y viceversa. Determinar un límite de interés es fundamental para marcar un análisis mas exacto, dando asi el interes en algunas relaciones.\nEtapas para considerar un limite:\na) Determinación del contexto de interés.\nb) Alcance del límite de interés entre el contexto y sistema."
   },
   {
     "word": "elemento",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Parte o componente que se halla en un sistema. Puede ser objeto, proceso o relación."
   },
   {
     "word": "emergencia",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "La descomposcion de sistemas en unidades menores avanza hasta el límite en el que surge un nuevo nivel de emergencia que corresponde a otro sistema cualitativamente diferente. Estas propiedades se desprenden por la interacción de los elementos de dicho sistema. "
   },
   {
     "word": "energía",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Resultados de procesos o entradas a un sistema, que hacen que éste continue su comportamiento o realice cambios segun los problemas a acciones que deriven del mismo."
   },
   {
     "word": "entradas",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Las entradas son los ingresos a un sistema que pueden ser recursos materiales, recursos humanos o información. Estas constituyen la fuerza de arranque de las necesidades para realizar operaciones. Pueden ser:\n1) En serie: la salida de un sistema anteriror con el cual el sistema en estudio esta relacionado de forma directa.\n2) Aleatoria: al azar, en sentido estadistico. Dichas entradas representan entradas potenciales.\n3) Retroacción: reintroducción de un parte de las salidas del sistemas en sí mismo."
   },
   {
     "word": "entropia",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Se busca mantener la energía del sistema. Como segundo principio de la termodinámica este establece el crecimiento de está, obteniendo una máxima probabilidad de los sistemas en su progresiva desorganización. \nEste desgaste que el sistema presenta por el transcurso del tiempo o por el funcionamiento del mismo. Estos sistemas con altos niveles tienden a desaparecer por su proceso sistémico. No existe un control o una retroalimentacion que motive a evitar su desaparición."
   },
   {
     "word": "equifinalidad",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Se define como el hecho de que un sistema este vivo a partir de distintas condiciones iniciales y por distintos cambios llega a un mismo estado final. Manteniedo un estado de equilibrio fluyente."
   },
   {
     "word": "equilibrio",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Estado intermedio entre el orden y el desorden. \nLos estados de quilibrio sistémicos pueden ser alcanzados en los sistemas abiertos. Esto implica necesariamente la importación de recursos provenientes del ambiente. "
   },
   {
     "word": "estructura",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Interrelaciones mas o menos estables entre las parte o componentes de un sistema. Estas de distinguen entre una estructura primaria y una hiperestructura."
   },
   {
     "word": "estabilidad",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Un sistema es estable cuando puede mantenerse en equilibrio a través del flujo continuo de materiales, energía e información.\n"
   },
   {
     "word": "frontera",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "En algunos sistemas sus fronteras o límites coinciden con discontinuidades estructurales entre estos y sus ambientes, pero corrientemente la demarcación de los límites sistémicos queda en manos de un observador.\n"
   },
   {
     "word": "funcion",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Output de un sistema que está dirigido a la mantención del sistema mayor en el que se encuentra inscrito."
   },
   {
     "word": "homeostasis",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Propiedad de un sistema que define su nivel de respuesta y de adaptación al contexto. Es decir, la homeostasis se puede definir como \"el mismo es y es esta propiedad la que permite a un sistema permanecer en un estado estable a través del tiempo.\"  La homeostasis actúa como condicionante del nivel de evolución.\n"
   },
   {
     "word": "informacion",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "La información tiene un comportamiento distinto al de la energía, pues su comunicación no elimina la información del emisor o fuente. La información es la más importante corriente negentrópica de que disponen los sistemas complejos."
   },
   {
     "word": "mantenibilidad",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Propiedad que tiene un sistema de mantenerse constantemente en funcionamiento. Para ello utiliza un mecanismo de mantenimiento que asegure que los distintos subsistemas están balanceados y que el sistema total se mantiene en equilibrio con su medio."
   },
   {
     "word": "modelo",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Constructos diseñados por un observador que persigue identificar y mensurar relaciones sistémicas complejas. Todo sistema real tiene la posibilidad de ser representado en más de un modelo. El metamodelo sistémico más conocido es el esquema input-output.\n"
   },
   {
     "word": "morfogenesis",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Se trata de procesos que apuntan al desarrollo, crecimiento o cambio en la forma, estructura y estado del sistema. Ejemplo de ello son los procesos de diferenciación, la especialización, el aprendizaje y otros."
   },
   {
     "word": "morfostasis ",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Procesos de intercambio con el ambiente que tienden a preservar o mantener una forma, una organización o un estado dado de un sistema. Procesos de este tipo son característicos de los sistemas vivos. En una perspectiva cibernética la morfostasis nos remite a los procesos causales mutuos que reducen o controlan las desviaciones."
   },
   {
     "word": "negentropia",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "La negentropía, entonces, se refiere a la energía que el sistema importa del ambiente para mantener su organización y sobrevivir "
   },
   {
     "word": "operadores",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Variables que activan a las demás y logran influir decisivamente en el proceso para que éste se ponga en marcha. Se puede decir que estas variables actúan como líderes de las restantes y por consiguiente son privilegiadas respecto a las demás variables. "
   },
   {
     "word": "organizacion",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "La organización sistémica se refiere al patrón de relaciones que definen los estados posibles para un sistema determinado.\n"
   },
   {
     "word": "parametro",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Cuando una variable no tiene cambios que dependen del comportamiento del mismo. Son consideraciones dadas por quien lo estudia.\n"
   },
   {
     "word": "permeabilidad",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Mide la interacción que un sistema recibe del medio, se dice que a mayor o menor permeabilidad el sistema será más o menos abierto."
   },
   {
     "word": "proceso",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": " En la transformación de entradas en salidas se debe saber siempre como se efectúa esa transformación. Transformación de una entrada en una salida, como tal puede ser una máquina, un individuo, un computador, un producto químico, una tarea realizada por un miembro de la organización, etcétera."
   },
   {
     "word": "rango",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "En el universo existen distintas estructuras de sistemas y es factible ejercitar en ellas un proceso de definición de rango relativo. El concepto de rango indica la jerarquía de los respectivos subsistemas entre sí y su nivel de relación con el sistema mayor en función de su grado de complejidad."
   },
   {
     "word": "recursividad",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Proceso que hace referencia a la introducción de los resultados de las operaciones de un sistema en él mismo."
   },
   {
     "word": "relacion",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Son enlaces que vinculan entre sí a los objetos o subsistemas que componen un sistema."
   },
   {
     "word": "simbioticas",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Es aquella en que los sistemas conectados no pueden seguir funcionando solos."
   },
   {
     "word": "sinergica",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Es una relación que no es necesaria para el funcionamiento pero que resulta útil"
   },
   {
     "word": "superflua",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Son las que repiten otras relaciones. La razón de las relaciones superfluas es la confiabilidad."
   },
   {
     "word": "retroalimentacion",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Proceso en que un sistema recoge información efecto de sus decisiones internas , información que actúa sobre las decisiones sucesivas. Se produce cuando parte de las salidas del sistema vuelven a ingresar a él como recursos o información. La retroalimentación permite el control de un sistema y que él mismo tome medidas de corrección en base a la información retroalimentada.\n"
   },
   {
     "word": "retroinput",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Salidas del sistema que van dirigidas al mismo sistema. En los sistemas humanos y sociales éstos corresponden a los procesos de autorreflexión.\n"
   },
   {
     "word": "salidas",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Son los resultados que se obtienen de procesar las entradas. Al igual que las entradas, pueden adoptar la forma de productos, servicios e información. "
   },
   {
     "word": "servicio",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Son los outputs de un sistema que van a servir de inputs a otros sistemas.\n"
   },
   {
     "word": "sinergia",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Es una relación que no es necesaria para el funcionamiento pero que resulta útil, ya que su desempeño mejora sustancialmente el sistema. Sinergia significa \"acción combinada\". "
   },
   {
     "word": "sistema",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Es un conjunto organizado de cosas o partes interactuantes e interdependientes, que se relacionan formando un todo unitario y complejo"
   },
   {
     "word": "sistemas",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Comprende una metodología para la construcción de modelos\nde sistemas sociales, que establece procedimientos y técnicas para el uso de lenguajes formalizados."
   },
   {
     "word": "sistemaabierto",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Se trata de sistemas que importan y procesan elementos de sus ambientes y ésta es una característica propia de todos los sistemas vivos. "
   },
   {
     "word": "sistemacerrado",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Un sistema es cerrado cuando ningún elemento de afuera entra y ninguno de adentro sale fuera del sistema. Estos alcanzan su estado máximo de equilibrio al igualarse con el medio. También se aplica a sistemas que se comportan de una manera fija, rítmica o sin variaciones, como sería el caso de los circuitos cerrados.\n"
   },
   {
     "word": "subsistema",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Conjuntos de elementos y relaciones que responden a estructuras y funciones especializadas dentro de un sistema mayor. En términos generales, los subsistemas tienen las mismas propiedades que los sistemas y su delimitación es relativa a la posición del observador de sistemas y al modelo que tenga de éstos."
   },
   {
     "word": "teleologia",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Este concepto expresa un modo de explicación basado en causas finales. Aristóteles y los Escolásticos son considerados como teleológicos en oposición a las causalistas o mecanicistas.\n"
   },
   {
     "word": "variables",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Suele denominarse como variable, a cada elemento de un modelo que compone o existe dentro de los sistemas."
   },
   {
     "word": "variedad",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Comprende el número de elementos discretos en un sistema."
   },
   {
     "word": "viabilidad",
-    "meaning": "Cascading Styles Sheets"
+    "meaning": "Indica una medida de la capacidad de sobrevivencia y adaptación de un sistema a un medio en cambio."
   }
 ]

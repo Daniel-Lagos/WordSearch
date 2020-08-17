@@ -1,8 +1,6 @@
 import styles from '../pages/index.module.css';
 import MainTitle from "../components/main/main-tittle";
-import GameButton from "../components/buttons/game-button";
 import Link from "next/link";
-import Name from "../components/example-component/Name";
 
 const Index = (props) => {
     return (<>

@@ -4,8 +4,9 @@ import WordSearch from "../components/word-search-table/word-search";
 import wordsearch from "../utils/word-search-logic";
 import GameButton from "../components/buttons/game-button";
 import Link from "next/link";
+import CrossWord from "../components/crossword-table/crossword-table";
 
-const CrossWord = (props) => {
+const CrossWordGame = (props) => {
     return (
         <div className={styles.mainContent}>
             <MainTitle title={'Crossword'}/>
@@ -36,12 +37,12 @@ const CrossWord = (props) => {
                 </div>
             </div>
             <div className={styles.mainContent}>
-                <WordSearch wordsString={props.puzzle}/>
+                <CrossWord wordsString={props.puzzle}/>
             </div>
         </div>
     )
 }
-export default CrossWord;
+export default CrossWordGame;
 
 
 function shuffle(array) {

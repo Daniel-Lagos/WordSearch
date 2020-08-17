@@ -71,7 +71,7 @@ export const getServerSideProps = async (context) => {
     });
     //console.log(search.placed)
     // console.log('==========================================================================')
-    // console.log(search.solved)
+    //console.log(search.solved)
 
     return {
         props: {
