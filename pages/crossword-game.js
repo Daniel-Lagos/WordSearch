@@ -24,10 +24,10 @@ const CrossWordGame = (props) => {
             <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
                   rel="stylesheet"/>
         </Head>
-        <MainTitle title={'Crossword'}/>
+        <MainTitle title={'CRUCIGRAMA'}/>
         <div className={styles.mainContent}>
             <div className={styles.optionsContent}>
-                <GameButton text={'New Game'}/>
+                <GameButton text={'Juego nuevo'}/>
                 <Link href={'/index'}>
                     <a className={styles.goBack}>Volver</a>
                 </Link>
