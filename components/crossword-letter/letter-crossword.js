@@ -29,16 +29,18 @@ const LetterCrossWord = ({ letter = '', x = 0, y = 0, originalWords = [] }) => {
     };
 
     const updateLetter = (inputText) => {
-        const safeInput = inputText ? inputText.length > 1 ? inputText.split('')[0] : inputText :
-            '';
-        setInputLetter(inputText);
+        const safeInput = (inputText
+            ? inputText.length > 1
+                ? inputText.split('')[0] : inputText
+            : '').toLowerCase();
+        setInputLetter(safeInput);
         const horizontalIndex = letter.across ? letter.across.index : -1;
         const verticalIndex = letter.down ? letter.down.index : -1;
         if (horizontalIndex >= 0) {
             updateFilledLetters({
                 type: 'update',
                 wordIndex: horizontalIndex,
-                payload: [inputText, x, y],
+                payload: [safeInput, x, y],
                 word: originalWords[horizontalIndex]
             });
         }
@@ -46,7 +48,7 @@ const LetterCrossWord = ({ letter = '', x = 0, y = 0, originalWords = [] }) => {
             updateFilledLetters({
                 type: 'update',
                 wordIndex: verticalIndex,
-                payload: [inputText, x, y],
+                payload: [safeInput, x, y],
                 word: originalWords[verticalIndex]
             });
         }
