@@ -13,17 +13,17 @@ const WordSearchGame = (props) => {
                 <title>Word Search</title>
                 <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"/>
             </Head>
-            <MainTitle title={'Word Search'}/>
+            <MainTitle title={'SOPA DE LETRAS'}/>
             <div className={styles.mainContent}>
                 <div className={styles.gameInformation}>
-                    <GameButton text={'New Game'}/>
+                    <GameButton text={'Juego nuevo'}/>
                     <Link href={'/index'}>
                         <a className={styles.goBack}>Volver</a>
                     </Link>
                     <Score/>
                 </div>
                 <div className={styles.gameWords}>
-                    <p>Words</p>
+                    <p>Palabras</p>
                 </div>
                 <WordSearchContext {...props}/>
             </div>
