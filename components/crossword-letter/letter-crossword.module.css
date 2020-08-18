@@ -1,11 +1,24 @@
+td.letter {
+    position: relative;
+    width: 32px;
+    height: 32px;
+}
 td.letter.black {
-    background: black;
-}
-input.input{
-    width: 1rem;
-    text-align: center;
-}
-input.input.empty{
-    visibility: hidden;
+    background: rgba(0,0,0,0);
+    color: rgba(0,0,0,0);
+    border: 1px solid rgba(0,0,0,0);
 }
 
+td.letter input {
+    width: 32px;
+    height: 30px;
+    text-align: center;
+    padding-top: 8px;
+}
+
+td.letter span {
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    font-size: .65rem;
+}

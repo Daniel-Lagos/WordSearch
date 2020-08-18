@@ -1,17 +1,18 @@
-import styles from "../components/crossword-game.module.css"
-import MainTitle from "../components/main/main-tittle";
-import WordSearch from "../components/word-search-table/word-search";
-import wordsearch from "../utils/word-search-logic";
-import GameButton from "../components/buttons/game-button";
-import Link from "next/link";
-import CrossWord from "../components/crossword-table/crossword-table";
-import Head from "next/head";
+import MainTitle from '../components/main/main-tittle';
+import wordsearch from '../utils/word-search-logic';
+import Crossword from '../utils/crossword-logic';
+import GameButton from '../components/buttons/game-button';
+import Link from 'next/link';
+import Head from 'next/head';
+import styles from '../components/crossword-game.module.css';
+import CrossWordContextWrapper from '../components/crossword-context-wrapper';
 
 const CrossWordGame = (props) => {
     return (<>
         <Head>
             <title>CrossWord</title>
-            <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"/>
+            <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+                  rel="stylesheet"/>
         </Head>
         <MainTitle title={'CRUCIGRAMA'}/>
         <div className={styles.mainContent}>
@@ -21,34 +22,17 @@ const CrossWordGame = (props) => {
                     <a className={styles.goBack}>Volver</a>
                 </Link>
             </div>
-            <div className={styles.wordsContent}>
-                <div>
-                    <h4 className={styles.h4}>Verticales</h4>
-                    <ul>
-                        <li>1.</li>
-                        <li>2.</li>
-                        <li>3.</li>
-                        <li>4.</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 className={styles.h4}>Horizontales</h4>
-                    <ul>
-                        <li>1.</li>
-                        <li>2.</li>
-                        <li>3.</li>
-                        <li>4.</li>
-                    </ul>
-                </div>
-            </div>
-            <div className={styles.mainContent}>
-                <CrossWord wordsString={props.puzzle}/>
-            </div>
+            <br/>
+            <CrossWordContextWrapper
+                wordsContentClass={styles.wordsContent}
+                mainContentClass={styles.mainContent}
+                solvedWordClass={styles.solved}
+                {...props}/>
         </div>
-    </>)
-}
-export default CrossWordGame;
+    </>);
+};
 
+export default CrossWordGame;
 
 function shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
@@ -73,18 +57,54 @@ export const getServerSideProps = async (context) => {
     const wordsJSON = await import('../utils/words.json');
     const words = wordsJSON.default || [];
     const randomWords = shuffle(words);
-    const selectedWords = randomWords.slice(0, words.length);
+    const selectedWords = randomWords.slice(0, 10);
     const wordsSortedByLength = selectedWords.sort((a, b) => {
         return a.word.length > b.word.length ? -1 : 1;
     });
     const size = Math.ceil(wordsSortedByLength[0].word.length);
     const wordsStrings = wordsSortedByLength.map((it) => {
-        return it.word.toLowerCase()
-    })
-    const search = await wordsearch(wordsStrings, size, size, {crossword: true});
-    if (!search) return {props: {}};
+        return it.word.toLowerCase();
+    });
+
+    const wordsMeanings = wordsSortedByLength.map((it) => it.meaning);
+
+    const { grid: cw, unplaced } = Crossword(wordsStrings, wordsMeanings, 50);
+
+    const csGrid = cw.map((row) => {
+        return (row || []).map((col) => {
+            if (col) {
+                return {
+                    ...col,
+                    across: col.across
+                        ? { ...col.across, first: col.across.is_start_of_word }
+                        : null,
+                    down: col.down ? { ...col.down, first: col.down.is_start_of_word } : null,
+                };
+            } else {
+                return { char: '-' };
+            }
+        });
+    });
+
+    const wordsWithPositions = selectedWords.map((it) => ({ ...it, positions: [] }));
+    const altCwGrid = csGrid.map((row, i) => {
+        return (row || []).map((col, j) => {
+            if (col.across) {
+                wordsWithPositions[col.across.index].positions =
+                    [...(wordsWithPositions[col.across.index].positions || []), [col.char, i, j]];
+            }
+            if (col.down) {
+                wordsWithPositions[col.down.index].positions =
+                    [...(wordsWithPositions[col.down.index].positions || []), [col.char, i, j]];
+            }
+            return [col.char, i, j];
+        });
+    });
+
+    const search = await wordsearch(wordsStrings, size, size, { crossword: true });
+    if (!search) return { props: {} };
     const actuallyPlacedWords = wordsSortedByLength.filter((it) => {
-        return Object.keys(search.placed).includes(it.word.toLowerCase())
+        return Object.keys(search.placed).includes(it.word.toLowerCase());
     });
     //console.log(search.placed)
     // console.log('==========================================================================')
@@ -95,7 +115,10 @@ export const getServerSideProps = async (context) => {
             puzzle: search.grid,
             solved: search.solved,
             placed: search.placed, //arreglo de palabras
-            originalWords: actuallyPlacedWords
+            originalWords: selectedWords,
+            cw: csGrid,
+            cwAlt: altCwGrid,
+            wordsWithPositions,
         }
     };
 };

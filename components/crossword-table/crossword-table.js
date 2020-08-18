@@ -1,8 +1,7 @@
-import Letter from "../word-search-letter/letter";
-import styles from "../crossword-table/crossword-table.module.css";
-import LetterCrossWord from "../crossword-letter/letter-crossword";
+import LetterCrossWord from '../crossword-letter/letter-crossword';
+import styles from '../crossword-table/crossword-table.module.css';
 
-const generateWords = (wordsString) => {
+const generateWords = (wordsString, originalWords) => {
     return (
         <>
             {
@@ -12,26 +11,27 @@ const generateWords = (wordsString) => {
                             {
                                 row.map((letter, indey) => {
                                     return (
-                                        <LetterCrossWord key={indey} letter={letter} x={index} y={indey}/>
-                                    )
+                                        <LetterCrossWord key={indey} letter={letter} x={index}
+                                                         y={indey} originalWords={originalWords}/>
+                                    );
                                 })
                             }
                         </tr>
-                    )
+                    );
                 })
             }
         </>
-    )
-}
+    );
+};
 
-const CrossWord = ({wordsString = []}) => {
+const CrossWord = ({ wordsString = [], cw = [], originalWords =[] }) => {
     return (<>
         <table className={styles.tableWord}>
             <tbody>
-            {generateWords(wordsString)}
+                {generateWords(cw, originalWords)}
             </tbody>
         </table>
     </>);
 
-}
+};
 export default CrossWord;

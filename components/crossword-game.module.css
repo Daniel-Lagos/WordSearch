@@ -6,8 +6,49 @@
 
 .wordsContent {
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: 1fr;
+    grid-gap: 4rem;
     align-items: center;
+}
+
+.wordsContent div {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    align-items: flex-start;
+    justify-content: flex-start;
+    word-break: break-word;
+}
+
+.wordsContent ul {
+    align-self: flex-start;
+    list-style: none;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+}
+
+.wordsContent ul li {
+    margin-top: 1rem;
+}
+
+.wordsContent ul li:first-of-type {
+    margin-top: 0;
+}
+
+.wordsContent ul li span {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.wordsContent ul li span:hover {
+    opacity: 1;
+    text-decoration: line-through;
+}
+
+.wordsContent ul li.solved {
+    color: #2d98da;
 }
 
 .optionsContent {
