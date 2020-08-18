@@ -5,11 +5,16 @@ import wordsearch from "../utils/word-search-logic";
 import GameButton from "../components/buttons/game-button";
 import Link from "next/link";
 import CrossWord from "../components/crossword-table/crossword-table";
+import Head from "next/head";
 
 const CrossWordGame = (props) => {
-    return (
+    return (<>
+        <Head>
+            <title>CrossWord</title>
+            <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"/>
+        </Head>
+        <MainTitle title={'Crossword'}/>
         <div className={styles.mainContent}>
-            <MainTitle title={'Crossword'}/>
             <div className={styles.optionsContent}>
                 <GameButton text={'New Game'}/>
                 <Link href={'/index'}>
@@ -40,7 +45,7 @@ const CrossWordGame = (props) => {
                 <CrossWord wordsString={props.puzzle}/>
             </div>
         </div>
-    )
+    </>)
 }
 export default CrossWordGame;
 
@@ -76,7 +81,7 @@ export const getServerSideProps = async (context) => {
     const wordsStrings = wordsSortedByLength.map((it) => {
         return it.word.toLowerCase()
     })
-    const search = await wordsearch(wordsStrings, size, size);
+    const search = await wordsearch(wordsStrings, size, size, {crossword: true});
     if (!search) return {props: {}};
     const actuallyPlacedWords = wordsSortedByLength.filter((it) => {
         return Object.keys(search.placed).includes(it.word.toLowerCase())

@@ -6,7 +6,7 @@ const MAX_ATTEMPTS = 20;                       // maximum amount of times to pla
  *
  * generate a wordsearch puzzle
  */
-function wordsearch(words, width, height, opts,game) {
+function wordsearch(words, width, height, opts) {
     if (!words || !words.length) return false;
     width = +width || 20;
     height = +height || 20;
@@ -39,9 +39,11 @@ function wordsearch(words, width, height, opts,game) {
         let originalword = words[i];
         let word = originalword;
 
-        // reverse the word if needed
-        if (Math.random() < opts.backwards) {
-          word = word.split('').reverse().join('');
+        // reverse the word if
+        if (!opts.crossword) {
+            if (Math.random() < opts.backwards) {
+                word = word.split('').reverse().join('');
+            }
         }
 
         // pick a random spot
@@ -49,8 +51,12 @@ function wordsearch(words, width, height, opts,game) {
         let attempts = 0;
         while (attempts < MAX_ATTEMPTS) {
             // determine the direction (up-right, right, down-right, down)
-            const direction = Math.floor(Math.random() * 4);
-            const info = directioninfo(word, direction, width, height);
+            let direction = Math.floor(Math.random() * 4);
+            if (opts.crossword) {
+                if (direction === 0 || direction === 2)
+                    direction += 1;
+            }
+            let info = directioninfo(word, direction, width, height);
 
             // word is too long, bail out
             if (info.maxx < 0 || info.maxy < 0 || info.maxy < info.miny || info.maxx < info.minx) {
@@ -109,10 +115,10 @@ function wordsearch(words, width, height, opts,game) {
         colorno = (colorno + 1) % 6;
     } // end word loop
 
-    // the solved grid... XXX I hate this
+// the solved grid... XXX I hate this
     const solved = JSON.parse(JSON.stringify(grid));
 
-    // put in filler characters
+// put in filler characters
     for (let i = 0; i < grid.length; i++) {
         for (let j = 0; j < grid[i].length; j++) {
             if (!grid[i][j]) {
@@ -124,7 +130,7 @@ function wordsearch(words, width, height, opts,game) {
         }
     }
 
-    // give the user some stuff
+// give the user some stuff
     return {
         grid: grid,
         solved: solved,

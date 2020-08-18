@@ -1,5 +1,6 @@
 import Letter from "../word-search-letter/letter";
 import styles from "../crossword-table/crossword-table.module.css";
+import LetterCrossWord from "../crossword-letter/letter-crossword";
 
 const generateWords = (wordsString) => {
     return (
@@ -11,7 +12,7 @@ const generateWords = (wordsString) => {
                             {
                                 row.map((letter, indey) => {
                                     return (
-                                        <Letter key={indey} letter={letter} x={index} y={indey}/>
+                                        <LetterCrossWord key={indey} letter={letter} x={index} y={indey}/>
                                     )
                                 })
                             }

@@ -7,10 +7,10 @@ const Letter = ({letter = '', x = '', y = ''}) => {
     const [selected, setSelected] = useState(false);
     const {setValue} = useContext(WordContext)
     return (
-        <td className={`${styles.letter} ${selected ? styles.selected : ''}`}
+        <td className={`${styles.letter} ${selected ? styles.selected : ''}  ${letter === '-' ? styles.black : ''}`}
             onClick={
                 () => {
-                    setValue({selected,x,y})
+                    setValue({selected, x, y})
                     setSelected(!selected)
                 }
             }>{letter}</td>

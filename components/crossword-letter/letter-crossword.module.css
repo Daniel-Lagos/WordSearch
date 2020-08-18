@@ -1,0 +1,11 @@
+td.letter.black {
+    background: black;
+}
+input.input{
+    width: 1rem;
+    text-align: center;
+}
+input.input.empty{
+    visibility: hidden;
+}
+

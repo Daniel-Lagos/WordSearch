@@ -8,14 +8,12 @@
     display: grid;
     grid-template-columns: 100%;
     align-items: center;
-    margin: 1rem 2rem;
 }
 
 .optionsContent {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 0 2rem;
     padding: 1rem;
 }
 
@@ -36,6 +34,4 @@
     .wordsContent {
         grid-template-columns: 50% 50%;
     }
-
-
 }
