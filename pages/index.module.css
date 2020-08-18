@@ -49,6 +49,11 @@
     font-size: 25px;
 }
 
+.p{
+    text-align: center;
+    justify-content: center;
+}
+
 @media (min-width: 600px) {
     .gameContent {
         grid-template-columns: 50% 50%;
