@@ -73,7 +73,7 @@ export const getServerSideProps = async (context) => {
     const wordsJSON = await import('../utils/words.json');
     const words = wordsJSON.default || [];
     const randomWords = shuffle(words);
-    const selectedWords = randomWords.slice(0, 6);
+    const selectedWords = randomWords.slice(0, words.length);
     const wordsSortedByLength = selectedWords.sort((a, b) => {
         return a.word.length > b.word.length ? -1 : 1;
     });
