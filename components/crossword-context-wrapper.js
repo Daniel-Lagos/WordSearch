@@ -42,9 +42,9 @@ const CrossWordContextWrapper = (props) => {
                 const actB = sortByY ? b[2] : b[1];
                 return actA - actB;
             });
-            const filledWord = filledLettersPositions.map((it) => it[0]).join('');
+            const filledWord = filledLettersPositions.map((it) => it[0]).join('').toLowerCase();
             if (filledWord.length <= 0) return '';
-            const word = wordLettersPositions.map((it) => it[0]).join('');
+            const word = wordLettersPositions.map((it) => it[0]).join('').toLowerCase();
             return word.toLowerCase() === filledWord.toLowerCase() ? props.solvedWordClass : '';
         } catch (e) {
             return '';
