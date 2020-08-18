@@ -6,8 +6,45 @@
 
 .wordsContent {
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: 1fr;
+    grid-gap: 4rem;
     align-items: center;
+}
+
+.wordsContent div {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    align-items: flex-start;
+    justify-content: flex-start;
+    word-break: break-word;
+}
+
+.wordsContent ul {
+    align-self: flex-start;
+    list-style: none;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+}
+
+.wordsContent ul li {
+    margin-top: 1rem;
+}
+
+.wordsContent ul li:first-of-type {
+    margin-top: 0;
+}
+
+.wordsContent ul li span {
+    color: rgba(0,0,0,0);
+    cursor: pointer;
+}
+
+.wordsContent ul li span:hover {
+    color: rgba(0,0,0,1);
+    text-decoration: line-through;
 }
 
 .optionsContent {

@@ -24,11 +24,11 @@ const generateWords = (wordsString) => {
     )
 }
 
-const CrossWord = ({wordsString = []}) => {
+const CrossWord = ({wordsString = [], cw= []}) => {
     return (<>
         <table className={styles.tableWord}>
             <tbody>
-            {generateWords(wordsString)}
+            {generateWords(cw)}
             </tbody>
         </table>
     </>);

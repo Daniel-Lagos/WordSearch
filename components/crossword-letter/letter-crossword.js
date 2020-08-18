@@ -1,10 +1,36 @@
-import styles from "../crossword-letter/letter-crossword.module.css";
+import { useState } from 'react';
+import styles from '../crossword-letter/letter-crossword.module.css';
 
-const LetterCrossWord = ({letter = '', x = '', y = ''}) => {
+const LetterCrossWord = ({ letter = '', x = '', y = '' }) => {
+    const [inputLetter, setInputLetter] = useState('');
+    if (letter.char === '-') return (<td className={`${styles.letter} ${styles.black}`}></td>);
+
+    const renderWordIndex = () => {
+        const horizontalIndex = letter.across
+            ? letter.across.first ? (letter.across.index + 1) : -1
+            : -1;
+        const verticalIndex = letter.down
+            ? letter.down.first ? (letter.down.index + 1) : -1
+            : -1;
+
+        let text = '';
+        if (horizontalIndex >= 0 && verticalIndex >= 0) {
+            text = `${verticalIndex}↓ ${horizontalIndex}→`;
+        } else if (horizontalIndex >= 0) {
+            text = `${horizontalIndex} →`;
+        } else if (verticalIndex >= 0) {
+            text = `${verticalIndex} ↓`;
+        }
+        if (text.length <= 0) return (<></>);
+        return (<span>{text}</span>);
+    };
+
     return (
-        <td className={`${styles.letter} ${letter === '-' ? styles.black : ''}`}>
-            <input className={`${styles.input} ${letter === '-' ? styles.empty : ''}`} type='text'/>
+        <td className={`${styles.letter} ${letter.char === '-' ? styles.black : ''}`}>
+            {renderWordIndex()}
+            <input type={'text'} max={'1'} maxLength={'1'} value={inputLetter}
+                   onChange={(e) => setInputLetter(e.target.value.toString())}/>
         </td>
-    )
-}
+    );
+};
 export default LetterCrossWord;
