@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { CrossWordContext } from '../crossword-context-wrapper';
 import styles from '../crossword-letter/letter-crossword.module.css';
 
-const LetterCrossWord = ({ letter = '', x = '', y = '' }) => {
+const LetterCrossWord = ({ letter = '', x = 0, y = 0, wordIndex = 0 }) => {
+    const { updateFilledLetters } = useContext(CrossWordContext);
+
     const [inputLetter, setInputLetter] = useState('');
     if (letter.char === '-') return (<td className={`${styles.letter} ${styles.black}`}></td>);
 
@@ -25,11 +28,25 @@ const LetterCrossWord = ({ letter = '', x = '', y = '' }) => {
         return (<span>{text}</span>);
     };
 
+    const updateLetter = (inputText) => {
+        setInputLetter(inputText);
+        const horizontalIndex = letter.across ? letter.across.index : -1;
+        const verticalIndex = letter.down ? letter.down.index : -1;
+        if (horizontalIndex >= 0) {
+            updateFilledLetters(
+                { type: 'update', wordIndex: horizontalIndex, payload: [inputText, x, y] });
+        }
+        if (verticalIndex >= 0) {
+            updateFilledLetters(
+                { type: 'update', wordIndex: verticalIndex, payload: [inputText, x, y] });
+        }
+    };
+
     return (
         <td className={`${styles.letter} ${letter.char === '-' ? styles.black : ''}`}>
             {renderWordIndex()}
             <input type={'text'} max={'1'} maxLength={'1'} value={inputLetter}
-                   onChange={(e) => setInputLetter(e.target.value.toString())}/>
+                   onChange={(e) => updateLetter(e.target.value.toString())}/>
         </td>
     );
 };

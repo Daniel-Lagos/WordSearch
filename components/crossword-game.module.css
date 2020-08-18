@@ -38,13 +38,17 @@
 }
 
 .wordsContent ul li span {
-    color: rgba(0,0,0,0);
+    opacity: 0;
     cursor: pointer;
 }
 
 .wordsContent ul li span:hover {
-    color: rgba(0,0,0,1);
+    opacity: 1;
     text-decoration: line-through;
+}
+
+.wordsContent ul li.solved {
+    color: #2d98da;
 }
 
 .optionsContent {

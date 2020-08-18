@@ -1,23 +1,13 @@
-import styles from '../components/crossword-game.module.css';
 import MainTitle from '../components/main/main-tittle';
 import wordsearch from '../utils/word-search-logic';
 import Crossword from '../utils/crossword-logic';
 import GameButton from '../components/buttons/game-button';
 import Link from 'next/link';
-import CrossWord from '../components/crossword-table/crossword-table';
 import Head from 'next/head';
+import styles from '../components/crossword-game.module.css';
+import CrossWordContextWrapper from '../components/crossword-context-wrapper';
 
 const CrossWordGame = (props) => {
-    const chunkSize = Math.ceil((props.originalWords || []).length / 2);
-    console.log(props.originalWords || []);
-    console.log(chunkSize);
-
-    const chunk = (arr, len = chunkSize) => {
-        var chunks = [], i = 0, n = arr.length;
-        while (i < n) { chunks.push(arr.slice(i, i += len)); }
-        return chunks;
-    };
-
     return (<>
         <Head>
             <title>CrossWord</title>
@@ -33,32 +23,16 @@ const CrossWordGame = (props) => {
                 </Link>
             </div>
             <br/>
-            <div className={styles.mainContent}>
-                <CrossWord wordsString={props.puzzle} cw={props.cw}/>
-                <br/><br/>
-            </div>
-            <br/>
-            <div className={styles.wordsContent}>
-                {chunk(props.originalWords || [], chunkSize).map((chunk, x) => {
-                    return (<div key={x}>
-                        <ul>
-                            {chunk.map((word, i) => {
-                                return (<li key={i}>
-                                    <p>
-                                        <b>{i + (x * chunkSize) + 1}.</b> {word.meaning}&nbsp;
-                                        <span>({word.word})</span>
-                                    </p>
-                                </li>);
-                            })}
-                        </ul>
-                    </div>);
-                })}
-            </div>
+            <CrossWordContextWrapper
+                wordsContentClass={styles.wordsContent}
+                mainContentClass={styles.mainContent}
+                solvedWordClass={styles.solved}
+                {...props}/>
         </div>
     </>);
 };
-export default CrossWordGame;
 
+export default CrossWordGame;
 
 function shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
@@ -83,7 +57,7 @@ export const getServerSideProps = async (context) => {
     const wordsJSON = await import('../utils/words.json');
     const words = wordsJSON.default || [];
     const randomWords = shuffle(words);
-    const selectedWords = randomWords.slice(0, 15);
+    const selectedWords = randomWords.slice(0, 10);
     const wordsSortedByLength = selectedWords.sort((a, b) => {
         return a.word.length > b.word.length ? -1 : 1;
     });
@@ -112,6 +86,21 @@ export const getServerSideProps = async (context) => {
         });
     });
 
+    const wordsWithPositions = selectedWords.map((it) => ({ ...it, positions: [] }));
+    const altCwGrid = csGrid.map((row, i) => {
+        return (row || []).map((col, j) => {
+            if (col.across) {
+                wordsWithPositions[col.across.index].positions =
+                    [...(wordsWithPositions[col.across.index].positions || []), [col.char, i, j]];
+            }
+            if (col.down) {
+                wordsWithPositions[col.down.index].positions =
+                    [...(wordsWithPositions[col.down.index].positions || []), [col.char, i, j]];
+            }
+            return [col.char, i, j];
+        });
+    });
+
     const search = await wordsearch(wordsStrings, size, size, { crossword: true });
     if (!search) return { props: {} };
     const actuallyPlacedWords = wordsSortedByLength.filter((it) => {
@@ -128,6 +117,8 @@ export const getServerSideProps = async (context) => {
             placed: search.placed, //arreglo de palabras
             originalWords: selectedWords,
             cw: csGrid,
+            cwAlt: altCwGrid,
+            wordsWithPositions,
         }
     };
 };
