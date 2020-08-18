@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { CrossWordContext } from '../crossword-context-wrapper';
 import styles from '../crossword-letter/letter-crossword.module.css';
 
-const LetterCrossWord = ({ letter = '', x = 0, y = 0, wordIndex = 0 }) => {
+const LetterCrossWord = ({ letter = '', x = 0, y = 0, originalWords = [] }) => {
     const { updateFilledLetters } = useContext(CrossWordContext);
 
     const [inputLetter, setInputLetter] = useState('');
@@ -29,16 +29,26 @@ const LetterCrossWord = ({ letter = '', x = 0, y = 0, wordIndex = 0 }) => {
     };
 
     const updateLetter = (inputText) => {
+        const safeInput = inputText ? inputText.length > 1 ? inputText.split('')[0] : inputText :
+            '';
         setInputLetter(inputText);
         const horizontalIndex = letter.across ? letter.across.index : -1;
         const verticalIndex = letter.down ? letter.down.index : -1;
         if (horizontalIndex >= 0) {
-            updateFilledLetters(
-                { type: 'update', wordIndex: horizontalIndex, payload: [inputText, x, y] });
+            updateFilledLetters({
+                type: 'update',
+                wordIndex: horizontalIndex,
+                payload: [inputText, x, y],
+                word: originalWords[horizontalIndex]
+            });
         }
         if (verticalIndex >= 0) {
-            updateFilledLetters(
-                { type: 'update', wordIndex: verticalIndex, payload: [inputText, x, y] });
+            updateFilledLetters({
+                type: 'update',
+                wordIndex: verticalIndex,
+                payload: [inputText, x, y],
+                word: originalWords[verticalIndex]
+            });
         }
     };
 

@@ -5,7 +5,10 @@ const crossWordReducer = (data, action) => {
     switch (action.type) {
         case 'update':
             const newData = [...data];
-            newData[action.wordIndex] = [...(newData[action.wordIndex] || []), action.payload];
+            const [char, x, y] = action.payload;
+            const preData = { ...(newData[action.wordIndex] || {}) };
+            preData[`${x}-${y}`] = char;
+            newData[action.wordIndex] = { ...preData };
             return [...newData];
         default:
             return [...data];
@@ -28,7 +31,17 @@ const CrossWordContextWrapper = (props) => {
     const checkIfWordIsSolved = (index) => {
         try {
             const wordLettersPositions = props.wordsWithPositions[index].positions || [];
-            const filledLettersPositions = filledLetters[index];
+            const [first, second] = wordLettersPositions;
+            const sortByY = first[1] === second[1];
+            const preFilledLetters = filledLetters[index];
+            const filledLettersPositions = Object.keys(preFilledLetters).map((key) => {
+                const [a, b] = key.split('-');
+                return [preFilledLetters[key], parseInt(a, 10), parseInt(b, 10)];
+            }).sort((a, b) => {
+                const actA = sortByY ? a[2] : a[1];
+                const actB = sortByY ? b[2] : b[1];
+                return actA - actB;
+            });
             const filledWord = filledLettersPositions.map((it) => it[0]).join('');
             if (filledWord.length <= 0) return '';
             const word = wordLettersPositions.map((it) => it[0]).join('');
@@ -44,7 +57,10 @@ const CrossWordContextWrapper = (props) => {
 
     return (<CrossWordContext.Provider value={sharedData}>
         <div className={props.mainContentClass}>
-            <CrossWord wordsString={props.puzzle} cw={props.cw}/>
+            <CrossWord
+                wordsString={props.puzzle}
+                cw={props.cw}
+                originalWords={props.wordsWithPositions}/>
             <br/><br/>
         </div>
         <br/>
