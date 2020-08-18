@@ -68,25 +68,25 @@ export const getServerSideProps = async (context) => {
 
     const wordsMeanings = wordsSortedByLength.map((it) => it.meaning);
 
-    const { grid: cw, unplaced } = Crossword(wordsStrings, wordsMeanings, 50);
-
+    const {grid: cw, unplaced} = Crossword(wordsStrings, wordsMeanings, 50);
+    console.log(JSON.stringify(cw, null, 2));
     const csGrid = cw.map((row) => {
         return (row || []).map((col) => {
             if (col) {
                 return {
                     ...col,
                     across: col.across
-                        ? { ...col.across, first: col.across.is_start_of_word }
+                        ? {...col.across, first: col.across.is_start_of_word}
                         : null,
-                    down: col.down ? { ...col.down, first: col.down.is_start_of_word } : null,
+                    down: col.down ? {...col.down, first: col.down.is_start_of_word} : null,
                 };
             } else {
-                return { char: '-' };
+                return {char: '-'};
             }
         });
     });
 
-    const wordsWithPositions = selectedWords.map((it) => ({ ...it, positions: [] }));
+    const wordsWithPositions = selectedWords.map((it) => ({...it, positions: []}));
     const altCwGrid = csGrid.map((row, i) => {
         return (row || []).map((col, j) => {
             if (col.across) {
@@ -101,8 +101,8 @@ export const getServerSideProps = async (context) => {
         });
     });
 
-    const search = await wordsearch(wordsStrings, size, size, { crossword: true });
-    if (!search) return { props: {} };
+    const search = await wordsearch(wordsStrings, size, size, {crossword: true});
+    if (!search) return {props: {}};
     const actuallyPlacedWords = wordsSortedByLength.filter((it) => {
         return Object.keys(search.placed).includes(it.word.toLowerCase());
     });

@@ -15,11 +15,21 @@ const FindWords = ({wordsList, wordsPlaced}) => {
         })
         return numberCorrectPositions === word.length;
     }
-    
+    const solvedWords = () => {
+        let complete = true
+        wordsList.forEach((word) => {
+            if (!resolveWords(word.word))
+                complete = false
+        })
+        if (complete)
+            alert("Felicitaciones, Completaste La sopa de letras")
+    }
+    solvedWords()
     return (<>
         <ul className={styles.wordBox}>
             {
                 wordsList.map((word, index) => {
+
                         return (
                             <li className={resolveWords(word.word) ? styles.solved : ""} key={index} onClick={() => {
                                 alert(word.meaning);
