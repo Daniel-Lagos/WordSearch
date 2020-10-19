@@ -17,7 +17,7 @@ const CrossWordGame = (props) => {
         <MainTitle title={'CRUCIGRAMA'}/>
         <div className={styles.mainContent}>
             <div className={styles.optionsContent}>
-                <GameButton text={'Juego nuevo'}/>
+                <GameButton text={'Play Again'}/>
                 <Link href={'/index'}>
                     <a className={styles.goBack}>Volver</a>
                 </Link>
